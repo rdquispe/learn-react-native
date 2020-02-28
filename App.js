@@ -3,7 +3,9 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Avatar, Button } from 'react-native-elements';
 import List from './src/List';
 import SectionListBasics from './src/SectionListBasics';
-import SectionListDays from './src/SectionListDays'
+import SectionListDays from './src/SectionListDays';
+import HttpExample from './src/HttpExample';
+import RandomUser from './src/RandomUser';
 
 
 const instructions = Platform.select({
@@ -31,7 +33,7 @@ export default class App extends Component {
 
         </View>
 
-        <SectionListDays></SectionListDays>
+        <RandomUser></RandomUser>
 
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
