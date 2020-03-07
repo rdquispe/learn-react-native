@@ -6,6 +6,9 @@ import SectionListBasics from './src/SectionListBasics';
 import SectionListDays from './src/SectionListDays';
 import HttpExample from './src/HttpExample';
 import RandomUser from './src/RandomUser';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+
 
 
 const instructions = Platform.select({
@@ -13,33 +16,31 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' + 'Shake or press menu button for dev menu',
 });
 
+function HomeScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home!</Text>
+    </View>
+  );
+}
+
+function SettingsScreen() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Settings!</Text>
+    </View>
+  );
+}
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-
-        <Avatar
-          rounded
-          size="xlarge"
-          title="EW"
-          showEditButton
-          onPress={() => console.log("Works!")}
-        />
-        <Text style={styles.welcome}>Emma Watson</Text>
-        <View style={{ flex: 0, flexDirection: 'row' }}>
-          <Button title="IN" onPress={() => console.log("In...!")} />
-          <Button title="OUT" onPress={() => console.log("Out...!")} style={styles.red} />
-
-        </View>
-
-        <RandomUser></RandomUser>
-
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-
-
-      </View>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Settings" component={SettingsScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
     );
   }
 }
