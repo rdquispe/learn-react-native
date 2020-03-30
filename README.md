@@ -1,4 +1,9 @@
-# learn-react-native
+# Learn Rect Native
 
-- expo
-- javascript
+Project Rect Native, using expo cli
+
+### Run
+
+```
+$ expo start
+```
